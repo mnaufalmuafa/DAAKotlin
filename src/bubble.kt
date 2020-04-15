@@ -1,7 +1,7 @@
-fun bubbleSort(arr : Array<Double>) {
+fun bubbleSort(arr : Array<Int>) {
     val arrSize = arr.size
-    for (pass in 0 .. arrSize-2) {
-        for (i in 0 .. arrSize-pass-2) {
+    for (pass in 1 until arrSize) {
+        for (i in 0 until arrSize-pass) {
             if (arr[i] > arr[i+1]) {
                 val temp = arr[i]
                 arr[i] = arr[i+1]
@@ -9,12 +9,13 @@ fun bubbleSort(arr : Array<Double>) {
             }
         }
     }
+    println("After sorting :")
     arr.forEach {
-        println(it)
+        print("$it ")
     }
 }
 
 fun main() {
-    val arr = arrayOf(4.0, 9.5, 7.8, 5.4, 8.9)
+    val arr = arrayOf(5, 2, 4, 1, 8)
     bubbleSort(arr)
 }
